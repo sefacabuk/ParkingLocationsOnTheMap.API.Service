@@ -6,6 +6,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ParkingLocationsOnTheMap.Business.Abstract;
+using ParkingLocationsOnTheMap.Business.Concrete;
+using ParkingLocationsOnTheMap.DataAccess.Abstract;
+using ParkingLocationsOnTheMap.DataAccess.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +31,19 @@ namespace ParkingLocationsOnTheMap.API
         {
 
             services.AddControllers();
+
+            services.AddSingleton<IIsparkDataService, IsparkDataManager>();
+            services.AddSingleton<IIsparkDataRepository, IsparkDataRepository>();
+            
+            services.AddSingleton<INewIsparkDataService, NewIsparkDataManager>();
+            services.AddSingleton<INewNewIsparkDataRepository, NewIsparkDataRepository>();
+
+            services.AddSingleton<IUserService, UserManager>();
+            services.AddSingleton<IUserRepository, UserRepository>();
+
+            services.AddSingleton<IUserAccessService, UserAccessManager>();
+            services.AddSingleton<IUserAccessRepository, UserAccessRepository>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ParkingLocationsOnTheMap.API", Version = "v1" });

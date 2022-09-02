@@ -1,4 +1,5 @@
 ﻿using ParkingLocationsOnTheMap.Business.Abstract;
+using ParkingLocationsOnTheMap.DataAccess.Abstract;
 using ParkingLocationsOnTheMap.DataAccess.Concrete;
 using ParkingLocationsOnTheMap.Entities;
 using System;
@@ -11,11 +12,11 @@ namespace ParkingLocationsOnTheMap.Business.Concrete
 {
     public class IsparkDataManager : IIsparkDataService
     {
-        private IsparkDataRepository _isparkDataRepository;
+        private IIsparkDataRepository _isparkDataRepository;
 
-        public IsparkDataManager()
+        public IsparkDataManager(IIsparkDataRepository isparkDataRepository)
         {
-            _isparkDataRepository = new IsparkDataRepository();
+            _isparkDataRepository = isparkDataRepository;
         }
 
         public IsparkData CreateIsparkData(IsparkData ispark)

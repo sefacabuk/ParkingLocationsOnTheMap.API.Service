@@ -1,4 +1,5 @@
 ﻿using ParkingLocationsOnTheMap.Business.Abstract;
+using ParkingLocationsOnTheMap.DataAccess.Abstract;
 using ParkingLocationsOnTheMap.DataAccess.Concrete;
 using ParkingLocationsOnTheMap.Entities;
 using System;
@@ -11,11 +12,11 @@ namespace ParkingLocationsOnTheMap.Business.Concrete
 {
     public class UserManager : IUserService
     {
-        private UserRepository _userRepository;
+        private IUserRepository _userRepository;
 
-        public UserManager()
+        public UserManager(IUserRepository userRepository)
         {
-            _userRepository = new UserRepository();
+            _userRepository = userRepository;
         }
 
         public User CreateUser(User user)

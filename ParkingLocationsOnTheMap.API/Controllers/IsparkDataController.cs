@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ParkingLocationsOnTheMap.Business.Abstract;
-using ParkingLocationsOnTheMap.Business.Concrete;
 using ParkingLocationsOnTheMap.Entities;
 using System;
 using System.Collections.Generic;
@@ -17,9 +16,9 @@ namespace ParkingLocationsOnTheMap.API.Controllers
     {
         private IIsparkDataService _isparkService;
 
-        public IsparkDataController()
+        public IsparkDataController(IIsparkDataService isparkDataService)
         {
-            _isparkService = new IsparkDataManager();
+            _isparkService = isparkDataService;
         }
 
         [HttpGet]
@@ -35,11 +34,11 @@ namespace ParkingLocationsOnTheMap.API.Controllers
             return _isparkService.GetIsparkDataId(id);
         }
 
-        [HttpPost]
-        public IsparkData Post(IsparkData isparkData)
-        {
-            return _isparkService.CreateIsparkData(isparkData);
-        }
+        //[HttpPost]
+        //public IsparkData Post(IsparkData isparkData)
+        //{
+        //    return _isparkService.CreateIsparkData(isparkData);
+        //}
 
         [HttpPut]
         public IsparkData Put([FromBody] IsparkData isparkData)
@@ -47,11 +46,11 @@ namespace ParkingLocationsOnTheMap.API.Controllers
             return _isparkService.UpdateIsparkData(isparkData);
         }
         
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-            _isparkService.DeleteIsparkData(id);
-        }
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //    _isparkService.DeleteIsparkData(id);
+        //}
 
 
     }

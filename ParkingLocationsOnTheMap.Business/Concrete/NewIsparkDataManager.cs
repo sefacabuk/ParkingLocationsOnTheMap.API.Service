@@ -13,9 +13,9 @@ namespace ParkingLocationsOnTheMap.Business.Concrete
     {
         private NewIsparkDataRepository _isparkDataRepository;
 
-        public NewIsparkDataManager()
+        public NewIsparkDataManager(NewIsparkDataRepository newIsparkDataRepository)
         {
-            _isparkDataRepository = new NewIsparkDataRepository();
+            _isparkDataRepository = newIsparkDataRepository;
         }
 
         public NewIsparkData CreateNewIsparkData(NewIsparkData ispark)

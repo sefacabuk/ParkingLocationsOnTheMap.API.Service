@@ -1,4 +1,5 @@
 ﻿using ParkingLocationsOnTheMap.Business.Abstract;
+using ParkingLocationsOnTheMap.DataAccess.Abstract;
 using ParkingLocationsOnTheMap.DataAccess.Concrete;
 using ParkingLocationsOnTheMap.Entities;
 using System;
@@ -11,11 +12,11 @@ namespace ParkingLocationsOnTheMap.Business.Concrete
 {
     public class UserAccessManager : IUserAccessService
     {
-        private UserAccessRepository _userAccessRepository;
+        private IUserAccessRepository _userAccessRepository;
 
-        public UserAccessManager()
+        public UserAccessManager(IUserAccessRepository userAccessRepository)
         {
-            _userAccessRepository = new UserAccessRepository();
+            _userAccessRepository = userAccessRepository;
         }
 
         public UserAccess CreateUserAccess(UserAccess userAccess)

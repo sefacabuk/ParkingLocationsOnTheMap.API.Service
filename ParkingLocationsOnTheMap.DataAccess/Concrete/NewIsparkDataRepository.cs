@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace ParkingLocationsOnTheMap.DataAccess.Concrete
 {
-    public class NewIsparkDataRepository : INewNewIsparkDataRepository
+    public class NewIsparkDataRepository : INewIsparkDataRepository
     {
-        public NewIsparkData CreateNewIsparkData(NewIsparkData ispark)   
+        public NewIsparkData CreateNewIsparkData(NewIsparkData newIspark)   
         {
             using (var parkingLocationsOnTheMapDbContext = new ParkingLocationsOnTheMapDbContext())
             {
 
-                parkingLocationsOnTheMapDbContext.NewIsparkData.Add(ispark);
+                parkingLocationsOnTheMapDbContext.NewIsparkData.Add(newIspark);
 
                 parkingLocationsOnTheMapDbContext.SaveChanges();
 
-                return ispark;
+                return newIspark;
             }
         }
 
@@ -51,15 +51,15 @@ namespace ParkingLocationsOnTheMap.DataAccess.Concrete
             }
         }
 
-        public NewIsparkData UpdateNewIsparkData(NewIsparkData ispark)
+        public NewIsparkData UpdateNewIsparkData(NewIsparkData newIspark)
         {
             using (var parkingLocationsOnTheMapDbContext = new ParkingLocationsOnTheMapDbContext())
             {
-                parkingLocationsOnTheMapDbContext.NewIsparkData.Update(ispark);
+                parkingLocationsOnTheMapDbContext.NewIsparkData.Update(newIspark);
 
                 parkingLocationsOnTheMapDbContext.SaveChanges();
 
-                return ispark;
+                return newIspark;
 
             }
         }

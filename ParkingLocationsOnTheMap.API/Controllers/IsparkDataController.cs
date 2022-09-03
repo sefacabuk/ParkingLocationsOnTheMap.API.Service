@@ -34,23 +34,23 @@ namespace ParkingLocationsOnTheMap.API.Controllers
             return _isparkService.GetIsparkDataId(id);
         }
 
-        //[HttpPost]
-        //public IsparkData Post(IsparkData isparkData)
-        //{
-        //    return _isparkService.CreateIsparkData(isparkData);
-        //}
+        [HttpPost]
+        public IsparkData Post(IsparkData isparkData)
+        {
+            return _isparkService.CreateIsparkData(isparkData);
+        }
 
         [HttpPut]
         public IsparkData Put([FromBody] IsparkData isparkData)
         {
             return _isparkService.UpdateIsparkData(isparkData);
         }
-        
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //    _isparkService.DeleteIsparkData(id);
-        //}
+
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+            _isparkService.DeleteIsparkData(id);
+        }
 
 
     }

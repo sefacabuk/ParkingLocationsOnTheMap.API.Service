@@ -32,22 +32,22 @@ namespace ParkingLocationsOnTheMap.API
 
             services.AddControllers();
 
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ParkingLocationsOnTheMap.API", Version = "v1" });
+            });
+
             services.AddSingleton<IIsparkDataService, IsparkDataManager>();
             services.AddSingleton<IIsparkDataRepository, IsparkDataRepository>();
-            
+
             services.AddSingleton<INewIsparkDataService, NewIsparkDataManager>();
-            services.AddSingleton<INewNewIsparkDataRepository, NewIsparkDataRepository>();
+            services.AddSingleton<INewIsparkDataRepository, NewIsparkDataRepository>();
 
             services.AddSingleton<IUserService, UserManager>();
             services.AddSingleton<IUserRepository, UserRepository>();
 
             services.AddSingleton<IUserAccessService, UserAccessManager>();
             services.AddSingleton<IUserAccessRepository, UserAccessRepository>();
-
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ParkingLocationsOnTheMap.API", Version = "v1" });
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -13,9 +13,9 @@ namespace ParkingLocationsOnTheMap.Business.Abstract
 
         NewIsparkData GetNewIsparkDataId(int id);
 
-        NewIsparkData CreateNewIsparkData(NewIsparkData ispark);
+        NewIsparkData CreateNewIsparkData(NewIsparkData newNewIspark);
 
-        NewIsparkData UpdateNewIsparkData(NewIsparkData ispark);
+        NewIsparkData UpdateNewIsparkData(NewIsparkData newNewIspark);
 
         void DeleteNewIsparkData(int id);
     }

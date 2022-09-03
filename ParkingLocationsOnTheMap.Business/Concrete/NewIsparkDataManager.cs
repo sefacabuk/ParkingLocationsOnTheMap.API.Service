@@ -1,4 +1,5 @@
 ﻿using ParkingLocationsOnTheMap.Business.Abstract;
+using ParkingLocationsOnTheMap.DataAccess.Abstract;
 using ParkingLocationsOnTheMap.DataAccess.Concrete;
 using ParkingLocationsOnTheMap.Entities;
 using System;
@@ -11,36 +12,36 @@ namespace ParkingLocationsOnTheMap.Business.Concrete
 {
     public class NewIsparkDataManager : INewIsparkDataService
     {
-        private NewIsparkDataRepository _isparkDataRepository;
+        private INewIsparkDataRepository _newIsparkDataRepository;
 
-        public NewIsparkDataManager(NewIsparkDataRepository newIsparkDataRepository)
+        public NewIsparkDataManager(INewIsparkDataRepository newIsparkDataRepository)
         {
-            _isparkDataRepository = newIsparkDataRepository;
+            _newIsparkDataRepository = newIsparkDataRepository;
         }
 
-        public NewIsparkData CreateNewIsparkData(NewIsparkData ispark)
+        public NewIsparkData CreateNewIsparkData(NewIsparkData newIspark)
         {
-            return _isparkDataRepository.CreateNewIsparkData(ispark);
+            return _newIsparkDataRepository.CreateNewIsparkData(newIspark);
         }
 
         public void DeleteNewIsparkData(int id)
         {
-            _isparkDataRepository.DeleteNewIsparkData(id);
+            _newIsparkDataRepository.DeleteNewIsparkData(id);
         }
 
         public List<NewIsparkData> GetAllNewIspark()
         {
-            return _isparkDataRepository.GetAllNewIspark();
+            return _newIsparkDataRepository.GetAllNewIspark();
         }
 
         public NewIsparkData GetNewIsparkDataId(int id)
         {
-            return _isparkDataRepository.GetNewIsparkDataId(id);
+            return _newIsparkDataRepository.GetNewIsparkDataId(id);
         }
 
-        public NewIsparkData UpdateNewIsparkData(NewIsparkData ispark)
+        public NewIsparkData UpdateNewIsparkData(NewIsparkData newIspark)
         {
-            return _isparkDataRepository.UpdateNewIsparkData(ispark);
+            return _newIsparkDataRepository.UpdateNewIsparkData(newIspark);
         }
     }
 }

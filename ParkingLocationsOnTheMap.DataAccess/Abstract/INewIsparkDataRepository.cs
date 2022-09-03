@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace ParkingLocationsOnTheMap.DataAccess.Abstract
 {
-    public interface INewNewIsparkDataRepository
+    public interface INewIsparkDataRepository
     {
         List<NewIsparkData> GetAllNewIspark();
 
         NewIsparkData GetNewIsparkDataId(int id);
 
-        NewIsparkData CreateNewIsparkData(NewIsparkData ispark);
+        NewIsparkData CreateNewIsparkData(NewIsparkData newNewIspark);
 
-        NewIsparkData UpdateNewIsparkData(NewIsparkData ispark);
+        NewIsparkData UpdateNewIsparkData(NewIsparkData newNewIspark);
 
         void DeleteNewIsparkData(int id);
 

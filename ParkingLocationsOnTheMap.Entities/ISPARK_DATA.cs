@@ -1,12 +1,13 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace ParkingLocationsOnTheMap.Entities
 {
-    public class NewIsparkData
+    public class ISPARK_DATA
     {
         [Key]
-        public int id { get; set; }
+        public int _id{ get; set; }
         public string PARK_NAME { get; set; }
         public string LOCATION_NAME { get; set; }
         public string PARK_TYPE_ID { get; set; }

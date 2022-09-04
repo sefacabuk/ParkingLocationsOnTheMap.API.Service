@@ -10,10 +10,21 @@ namespace ParkingLocationsOnTheMap.DataAccess.Concrete
 {
     public class IsparkDataRepository : IIsparkDataRepository
     {
-        public IsparkData CreateIsparkData(IsparkData ispark)   
+        public ISPARK_DATA CreateIsparkData(ISPARK_DATA ispark)   
         {
             using (var parkingLocationsOnTheMapDbContext = new ParkingLocationsOnTheMapDbContext())
             {
+                
+                var isparkControl = GetIsparkDataId(ispark._id);
+
+                if (isparkControl != null)
+                {
+                    parkingLocationsOnTheMapDbContext.IsparkData.Update(ispark);
+
+                    parkingLocationsOnTheMapDbContext.SaveChanges();
+
+                    return ispark;
+                }
 
                 parkingLocationsOnTheMapDbContext.IsparkData.Add(ispark);
 
@@ -35,7 +46,7 @@ namespace ParkingLocationsOnTheMap.DataAccess.Concrete
             }
         }
 
-        public List<IsparkData> GetAllIspark()
+        public List<ISPARK_DATA> GetAllIspark()
         {
             using (var parkingLocationsOnTheMapDbContext = new ParkingLocationsOnTheMapDbContext())
             {
@@ -43,7 +54,7 @@ namespace ParkingLocationsOnTheMap.DataAccess.Concrete
             }
         }
 
-        public IsparkData GetIsparkDataId(int id)
+        public ISPARK_DATA GetIsparkDataId(int id)
         {
             using (var parkingLocationsOnTheMapDbContext = new ParkingLocationsOnTheMapDbContext())
             {
@@ -51,7 +62,7 @@ namespace ParkingLocationsOnTheMap.DataAccess.Concrete
             }
         }
 
-        public IsparkData UpdateIsparkData(IsparkData ispark)
+        public ISPARK_DATA UpdateIsparkData(ISPARK_DATA ispark)
         {
             using (var parkingLocationsOnTheMapDbContext = new ParkingLocationsOnTheMapDbContext())
             {

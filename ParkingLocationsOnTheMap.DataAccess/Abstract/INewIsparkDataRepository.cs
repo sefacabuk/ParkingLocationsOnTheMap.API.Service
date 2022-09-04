@@ -9,15 +9,18 @@ namespace ParkingLocationsOnTheMap.DataAccess.Abstract
 {
     public interface INewIsparkDataRepository
     {
-        List<NewIsparkData> GetAllNewIspark();
+        List<NEW_ISPARK_DATA> GetAllNewIspark();
 
-        NewIsparkData GetNewIsparkDataId(int id);
+        NEW_ISPARK_DATA GetNewIsparkDataId(int id);
 
-        NewIsparkData CreateNewIsparkData(NewIsparkData newNewIspark);
+        NEW_ISPARK_DATA CreateNewIsparkData(NEW_ISPARK_DATA newNewIspark);
 
-        NewIsparkData UpdateNewIsparkData(NewIsparkData newNewIspark);
+        NEW_ISPARK_DATA UpdateNewIsparkData(NEW_ISPARK_DATA newNewIspark);
 
         void DeleteNewIsparkData(int id);
+
+        //NEW_ISPARK_DATA UpdateIsparkAllData(NEW_ISPARK_DATA newNewIspark);
+
 
     }
 }

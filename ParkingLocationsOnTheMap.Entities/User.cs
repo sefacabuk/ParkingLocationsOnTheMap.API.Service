@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ParkingLocationsOnTheMap.Entities
 {
-    public class User
+    public class USER
     {
         public Guid ID { get; set; }
         

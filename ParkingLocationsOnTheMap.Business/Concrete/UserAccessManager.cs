@@ -19,7 +19,7 @@ namespace ParkingLocationsOnTheMap.Business.Concrete
             _userAccessRepository = userAccessRepository;
         }
 
-        public UserAccess CreateUserAccess(UserAccess userAccess)
+        public USER_ACCESS CreateUserAccess(USER_ACCESS userAccess)
         {
             return _userAccessRepository.CreateUserAccess(userAccess);
         }
@@ -29,17 +29,17 @@ namespace ParkingLocationsOnTheMap.Business.Concrete
             _userAccessRepository.DeleteUserAccess(id);
         }
 
-        public List<UserAccess> GetAllUserAccess()
+        public List<USER_ACCESS> GetAllUserAccess()
         {
             return _userAccessRepository.GetAllUserAccess();
         }
 
-        public UserAccess GetUserAccessId(int id)
+        public USER_ACCESS GetUserAccessId(int id)
         {
             return _userAccessRepository.GetUserAccessId(id);
         }
 
-        public UserAccess UpdateUserAccess(UserAccess userAccess)
+        public USER_ACCESS UpdateUserAccess(USER_ACCESS userAccess)
         {
             return _userAccessRepository.UpdateUserAccess(userAccess);
         }

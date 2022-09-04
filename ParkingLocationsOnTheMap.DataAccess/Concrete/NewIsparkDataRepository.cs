@@ -10,7 +10,7 @@ namespace ParkingLocationsOnTheMap.DataAccess.Concrete
 {
     public class NewIsparkDataRepository : INewIsparkDataRepository
     {
-        public NewIsparkData CreateNewIsparkData(NewIsparkData newIspark)   
+        public NEW_ISPARK_DATA CreateNewIsparkData(NEW_ISPARK_DATA newIspark)   
         {
             using (var parkingLocationsOnTheMapDbContext = new ParkingLocationsOnTheMapDbContext())
             {
@@ -35,7 +35,7 @@ namespace ParkingLocationsOnTheMap.DataAccess.Concrete
             }
         }
 
-        public List<NewIsparkData> GetAllNewIspark()
+        public List<NEW_ISPARK_DATA> GetAllNewIspark()
         {
             using (var parkingLocationsOnTheMapDbContext = new ParkingLocationsOnTheMapDbContext())
             {
@@ -43,7 +43,7 @@ namespace ParkingLocationsOnTheMap.DataAccess.Concrete
             }
         }
 
-        public NewIsparkData GetNewIsparkDataId(int id)
+        public NEW_ISPARK_DATA GetNewIsparkDataId(int id)
         {
             using (var parkingLocationsOnTheMapDbContext = new ParkingLocationsOnTheMapDbContext())
             {
@@ -51,7 +51,7 @@ namespace ParkingLocationsOnTheMap.DataAccess.Concrete
             }
         }
 
-        public NewIsparkData UpdateNewIsparkData(NewIsparkData newIspark)
+        public NEW_ISPARK_DATA UpdateNewIsparkData(NEW_ISPARK_DATA newIspark)
         {
             using (var parkingLocationsOnTheMapDbContext = new ParkingLocationsOnTheMapDbContext())
             {
@@ -63,5 +63,31 @@ namespace ParkingLocationsOnTheMap.DataAccess.Concrete
 
             }
         }
+
+        //public NEW_ISPARK_DATA UpdateIsparkAllData(NEW_ISPARK_DATA newIspark)
+        //{
+        //    using (var parkingLocationsOnTheMapDbContext = new ParkingLocationsOnTheMapDbContext())
+        //    {
+
+        //        var newIsparkControl = parkingLocationsOnTheMapDbContext.NewIsparkData
+        //            .Where(x => x.ISPARK_DATA_ID == newIspark.ID).FirstOrDefault();
+
+        //        if (newIsparkControl != null)
+        //        {
+        //            parkingLocationsOnTheMapDbContext.NewIsparkData.Update(newIspark);
+
+        //            parkingLocationsOnTheMapDbContext.SaveChanges();
+
+        //            return newIspark;
+        //        }
+
+        //        parkingLocationsOnTheMapDbContext.NewIsparkData.Add(newIspark);
+
+        //        parkingLocationsOnTheMapDbContext.SaveChanges();
+
+        //        return newIspark;
+        //    }
+        //}
+
     }
 }

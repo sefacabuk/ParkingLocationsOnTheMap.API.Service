@@ -19,7 +19,7 @@ namespace ParkingLocationsOnTheMap.Business.Concrete
             _isparkDataRepository = isparkDataRepository;
         }
 
-        public IsparkData CreateIsparkData(IsparkData ispark)
+        public ISPARK_DATA CreateIsparkData(ISPARK_DATA ispark)
         {
             return _isparkDataRepository.CreateIsparkData(ispark);
         }
@@ -29,17 +29,17 @@ namespace ParkingLocationsOnTheMap.Business.Concrete
             _isparkDataRepository.DeleteIsparkData(id);
         }
 
-        public List<IsparkData> GetAllIspark()
+        public List<ISPARK_DATA> GetAllIspark()
         {
             return _isparkDataRepository.GetAllIspark();
         }
 
-        public IsparkData GetIsparkDataId(int id)
+        public ISPARK_DATA GetIsparkDataId(int id)
         {
             return _isparkDataRepository.GetIsparkDataId(id);
         }
 
-        public IsparkData UpdateIsparkData(IsparkData ispark)
+        public ISPARK_DATA UpdateIsparkData(ISPARK_DATA ispark)
         {
             return _isparkDataRepository.UpdateIsparkData(ispark);
         }

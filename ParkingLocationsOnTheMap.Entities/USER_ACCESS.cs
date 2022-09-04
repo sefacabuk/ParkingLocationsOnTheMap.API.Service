@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ParkingLocationsOnTheMap.Entities
 {
-    public class UserAccess
+    public class USER_ACCESS
     {
         public Guid ID { get; set; }
         public DateTime DATE_TIME { get; set; }
         public DateTime TIME_OVER { get; set; }
         public int STATUS { get; set; }
-        public  User User { get; set; }
+        public  USER USER { get; set; }
     }
 }

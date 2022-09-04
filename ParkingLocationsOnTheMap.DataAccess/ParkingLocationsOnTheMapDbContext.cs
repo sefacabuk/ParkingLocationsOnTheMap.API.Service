@@ -15,10 +15,10 @@ namespace ParkingLocationsOnTheMap.DataAccess
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer("Server=DESKTOP-H45A4ON; Database=ParkingLocationsOnTheMapDb;uid=sefa;password=sefa");
         }
-        public DbSet<IsparkData> IsparkData { get; set; }
-        public DbSet<NewIsparkData> NewIsparkData { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<UserAccess> UserAccess { get; set; }
+        public DbSet<ISPARK_DATA> IsparkData { get; set; }
+        public DbSet<NEW_ISPARK_DATA> NewIsparkData { get; set; }
+        public DbSet<USER> Users { get; set; }
+        public DbSet<USER_ACCESS> UserAccess { get; set; }
     }
 
 }

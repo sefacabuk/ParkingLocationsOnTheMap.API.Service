@@ -22,26 +22,26 @@ namespace ParkingLocationsOnTheMap.API.Controllers
         }
 
         [HttpGet]
-        public List<User> Get()
+        public List<USER> Get()
         {
             return _newIsparkService.GetAllUser();
         }
 
 
         [HttpGet("{id}")]
-        public User Get(int id)
+        public USER Get(int id)
         {
             return _newIsparkService.GetUserId(id);
         }
 
         [HttpPost]
-        public User Post(User newIsparkData)
+        public USER Post(USER newIsparkData)
         {
             return _newIsparkService.CreateUser(newIsparkData);
         }
 
         [HttpPut]
-        public User Put([FromBody] User newIsparkData)
+        public USER Put([FromBody] USER newIsparkData)
         {
             return _newIsparkService.UpdateUser(newIsparkData);
         }

@@ -19,7 +19,7 @@ namespace ParkingLocationsOnTheMap.Business.Concrete
             _userRepository = userRepository;
         }
 
-        public User CreateUser(User user)
+        public USER CreateUser(USER user)
         {
             return _userRepository.CreateUser(user);
         }
@@ -29,17 +29,17 @@ namespace ParkingLocationsOnTheMap.Business.Concrete
             _userRepository.DeleteUser(id);
         }
 
-        public List<User> GetAllUser()
+        public List<USER> GetAllUser()
         {
             return _userRepository.GetAllUser();
         }
 
-        public User GetUserId(int id)
+        public USER GetUserId(int id)
         {
             return _userRepository.GetUserId(id);
         }
 
-        public User UpdateUser(User user)
+        public USER UpdateUser(USER user)
         {
             return _userRepository.UpdateUser(user);
         }

@@ -10,7 +10,7 @@ namespace ParkingLocationsOnTheMap.DataAccess.Concrete
 {
     public class UserRepository : IUserRepository
     {
-        public User CreateUser(User user)
+        public USER CreateUser(USER user)
         {
             using (var parkingLocationsOnTheMapDbContext = new ParkingLocationsOnTheMapDbContext())
             {
@@ -36,7 +36,7 @@ namespace ParkingLocationsOnTheMap.DataAccess.Concrete
             }
         }
 
-        public List<User> GetAllUser()
+        public List<USER> GetAllUser()
         {
             using (var parkingLocationsOnTheMapDbContext = new ParkingLocationsOnTheMapDbContext())
             {
@@ -44,7 +44,7 @@ namespace ParkingLocationsOnTheMap.DataAccess.Concrete
             }
         }
 
-        public User GetUserId(int id)
+        public USER GetUserId(int id)
         {
             using (var parkingLocationsOnTheMapDbContext = new ParkingLocationsOnTheMapDbContext())
             {
@@ -52,7 +52,7 @@ namespace ParkingLocationsOnTheMap.DataAccess.Concrete
             }
         }
 
-        public User UpdateUser(User user)
+        public USER UpdateUser(USER user)
         {
             using (var parkingLocationsOnTheMapDbContext = new ParkingLocationsOnTheMapDbContext())
             {

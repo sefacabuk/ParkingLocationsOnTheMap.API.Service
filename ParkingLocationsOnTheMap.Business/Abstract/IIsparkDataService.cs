@@ -9,13 +9,13 @@ namespace ParkingLocationsOnTheMap.Business.Abstract
 {
     public interface IIsparkDataService
     {
-        List<IsparkData> GetAllIspark();
+        List<ISPARK_DATA> GetAllIspark();
 
-        IsparkData GetIsparkDataId(int id);
+        ISPARK_DATA GetIsparkDataId(int id);
 
-        IsparkData CreateIsparkData(IsparkData ispark);
+        ISPARK_DATA CreateIsparkData(ISPARK_DATA ispark);
 
-        IsparkData UpdateIsparkData(IsparkData ispark);
+        ISPARK_DATA UpdateIsparkData(ISPARK_DATA ispark);
 
         void DeleteIsparkData(int id);
     }

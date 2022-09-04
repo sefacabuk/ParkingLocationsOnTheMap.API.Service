@@ -10,8 +10,8 @@ using ParkingLocationsOnTheMap.DataAccess;
 namespace ParkingLocationsOnTheMap.DataAccess.Migrations
 {
     [DbContext(typeof(ParkingLocationsOnTheMapDbContext))]
-    [Migration("20220901234158_dbCreateMig")]
-    partial class dbCreateMig
+    [Migration("20220904200435_initialCreateMig")]
+    partial class initialCreateMig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,9 +21,9 @@ namespace ParkingLocationsOnTheMap.DataAccess.Migrations
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ParkingLocationsOnTheMap.Entities.IsparkData", b =>
+            modelBuilder.Entity("ParkingLocationsOnTheMap.Entities.ISPARK_DATA", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("_id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -52,14 +52,14 @@ namespace ParkingLocationsOnTheMap.DataAccess.Migrations
                     b.Property<string>("WORKING_TIME")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("_id");
 
                     b.ToTable("IsparkData");
                 });
 
-            modelBuilder.Entity("ParkingLocationsOnTheMap.Entities.NewIsparkData", b =>
+            modelBuilder.Entity("ParkingLocationsOnTheMap.Entities.NEW_ISPARK_DATA", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -69,6 +69,9 @@ namespace ParkingLocationsOnTheMap.DataAccess.Migrations
 
                     b.Property<string>("COUNTY_NAME")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ISPARK_DATA_ID")
+                        .HasColumnType("int");
 
                     b.Property<string>("LATITUDE")
                         .HasColumnType("nvarchar(max)");
@@ -88,12 +91,12 @@ namespace ParkingLocationsOnTheMap.DataAccess.Migrations
                     b.Property<string>("WORKING_TIME")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("ID");
 
                     b.ToTable("NewIsparkData");
                 });
 
-            modelBuilder.Entity("ParkingLocationsOnTheMap.Entities.User", b =>
+            modelBuilder.Entity("ParkingLocationsOnTheMap.Entities.USER", b =>
                 {
                     b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
@@ -120,7 +123,7 @@ namespace ParkingLocationsOnTheMap.DataAccess.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("ParkingLocationsOnTheMap.Entities.UserAccess", b =>
+            modelBuilder.Entity("ParkingLocationsOnTheMap.Entities.USER_ACCESS", b =>
                 {
                     b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
@@ -135,23 +138,23 @@ namespace ParkingLocationsOnTheMap.DataAccess.Migrations
                     b.Property<DateTime>("TIME_OVER")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("UserID")
+                    b.Property<Guid?>("USERID")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("UserID");
+                    b.HasIndex("USERID");
 
                     b.ToTable("UserAccess");
                 });
 
-            modelBuilder.Entity("ParkingLocationsOnTheMap.Entities.UserAccess", b =>
+            modelBuilder.Entity("ParkingLocationsOnTheMap.Entities.USER_ACCESS", b =>
                 {
-                    b.HasOne("ParkingLocationsOnTheMap.Entities.User", "User")
+                    b.HasOne("ParkingLocationsOnTheMap.Entities.USER", "USER")
                         .WithMany()
-                        .HasForeignKey("UserID");
+                        .HasForeignKey("USERID");
 
-                    b.Navigation("User");
+                    b.Navigation("USER");
                 });
 #pragma warning restore 612, 618
         }

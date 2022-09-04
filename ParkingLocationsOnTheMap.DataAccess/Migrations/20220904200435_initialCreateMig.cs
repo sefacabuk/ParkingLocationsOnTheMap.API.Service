@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ParkingLocationsOnTheMap.DataAccess.Migrations
 {
-    public partial class dbCreateMig : Migration
+    public partial class initialCreateMig : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,8 +11,7 @@ namespace ParkingLocationsOnTheMap.DataAccess.Migrations
                 name: "IsparkData",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    _id = table.Column<int>(type: "int", nullable: false),
                     PARK_NAME = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LOCATION_NAME = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PARK_TYPE_ID = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -24,14 +23,14 @@ namespace ParkingLocationsOnTheMap.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_IsparkData", x => x.id);
+                    table.PrimaryKey("PK_IsparkData", x => x._id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "NewIsparkData",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PARK_NAME = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LOCATION_NAME = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -40,11 +39,12 @@ namespace ParkingLocationsOnTheMap.DataAccess.Migrations
                     WORKING_TIME = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     COUNTY_NAME = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LONGITUDE = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LATITUDE = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    LATITUDE = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ISPARK_DATA_ID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_NewIsparkData", x => x.id);
+                    table.PrimaryKey("PK_NewIsparkData", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -70,23 +70,23 @@ namespace ParkingLocationsOnTheMap.DataAccess.Migrations
                     DATE_TIME = table.Column<DateTime>(type: "datetime2", nullable: false),
                     TIME_OVER = table.Column<DateTime>(type: "datetime2", nullable: false),
                     STATUS = table.Column<int>(type: "int", nullable: false),
-                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    USERID = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserAccess", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_UserAccess_Users_UserID",
-                        column: x => x.UserID,
+                        name: "FK_UserAccess_Users_USERID",
+                        column: x => x.USERID,
                         principalTable: "Users",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserAccess_UserID",
+                name: "IX_UserAccess_USERID",
                 table: "UserAccess",
-                column: "UserID");
+                column: "USERID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

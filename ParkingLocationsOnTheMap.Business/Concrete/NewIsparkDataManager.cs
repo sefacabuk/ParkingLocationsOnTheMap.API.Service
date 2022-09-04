@@ -19,29 +19,35 @@ namespace ParkingLocationsOnTheMap.Business.Concrete
             _newIsparkDataRepository = newIsparkDataRepository;
         }
 
-        public NewIsparkData CreateNewIsparkData(NewIsparkData newIspark)
+        public NEW_ISPARK_DATA CreateNewIsparkData(NEW_ISPARK_DATA newIspark)
         {
             return _newIsparkDataRepository.CreateNewIsparkData(newIspark);
         }
-
+       
         public void DeleteNewIsparkData(int id)
         {
             _newIsparkDataRepository.DeleteNewIsparkData(id);
         }
 
-        public List<NewIsparkData> GetAllNewIspark()
+        public List<NEW_ISPARK_DATA> GetAllNewIspark()
         {
             return _newIsparkDataRepository.GetAllNewIspark();
         }
 
-        public NewIsparkData GetNewIsparkDataId(int id)
+        public NEW_ISPARK_DATA GetNewIsparkDataId(int id)
         {
             return _newIsparkDataRepository.GetNewIsparkDataId(id);
         }
 
-        public NewIsparkData UpdateNewIsparkData(NewIsparkData newIspark)
+        public NEW_ISPARK_DATA UpdateNewIsparkData(NEW_ISPARK_DATA newIspark)
         {
             return _newIsparkDataRepository.UpdateNewIsparkData(newIspark);
         }
+
+        //public NEW_ISPARK_DATA UpdateIsparkAllData(NEW_ISPARK_DATA newIspark)
+        //{
+        //    return _newIsparkDataRepository.CreateNewIsparkData(newIspark);
+        //}
+
     }
 }

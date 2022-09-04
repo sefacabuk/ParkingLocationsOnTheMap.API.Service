@@ -9,13 +9,13 @@ namespace ParkingLocationsOnTheMap.Business.Abstract
 {
     public interface IUserAccessService
     {
-        List<UserAccess> GetAllUserAccess();
+        List<USER_ACCESS> GetAllUserAccess();
 
-        UserAccess GetUserAccessId(int id);
+        USER_ACCESS GetUserAccessId(int id);
 
-        UserAccess CreateUserAccess(UserAccess userAccess);
+        USER_ACCESS CreateUserAccess(USER_ACCESS userAccess);
 
-        UserAccess UpdateUserAccess(UserAccess userAccess);
+        USER_ACCESS UpdateUserAccess(USER_ACCESS userAccess);
 
         void DeleteUserAccess(int id);
     }

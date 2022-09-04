@@ -9,13 +9,13 @@ namespace ParkingLocationsOnTheMap.Business.Abstract
 {
     public interface IUserService
     {
-        List<User> GetAllUser();
+        List<USER> GetAllUser();
 
-        User GetUserId(int id);
+        USER GetUserId(int id);
 
-        User CreateUser(User user);
+        USER CreateUser(USER user);
 
-        User UpdateUser(User user);
+        USER UpdateUser(USER user);
 
         void DeleteUser(int id);
     }

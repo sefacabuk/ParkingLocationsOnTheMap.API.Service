@@ -39,8 +39,7 @@ namespace ParkingLocationsOnTheMap.DataAccess.Migrations
                     WORKING_TIME = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     COUNTY_NAME = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LONGITUDE = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LATITUDE = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ISPARK_DATA_ID = table.Column<int>(type: "int", nullable: true)
+                    LATITUDE = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

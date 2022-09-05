@@ -15,6 +15,5 @@ namespace ParkingLocationsOnTheMap.Entities
         public string COUNTY_NAME { get; set; }
         public string LONGITUDE { get; set; }
         public string LATITUDE { get; set; }
-        public int ISPARK_DATA_ID { get; set; }
     }
 }

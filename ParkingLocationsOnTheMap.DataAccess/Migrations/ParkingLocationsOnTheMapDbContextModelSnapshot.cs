@@ -68,9 +68,6 @@ namespace ParkingLocationsOnTheMap.DataAccess.Migrations
                     b.Property<string>("COUNTY_NAME")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ISPARK_DATA_ID")
-                        .HasColumnType("int");
-
                     b.Property<string>("LATITUDE")
                         .HasColumnType("nvarchar(max)");
 

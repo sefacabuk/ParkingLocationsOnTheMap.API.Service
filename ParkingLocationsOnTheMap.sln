@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingLocationsOnTheMap.Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingLocationsOnTheMap.Business", "ParkingLocationsOnTheMap.Business\ParkingLocationsOnTheMap.Business.csproj", "{42BCF9C1-779A-45F6-ADFF-17CDD8DDAAEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingLocationsOnTheMap.API", "ParkingLocationsOnTheMap.API\ParkingLocationsOnTheMap.API.csproj", "{86ED6923-A87D-46B6-B7A1-58955675DB9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingLocationsOnTheMap.API", "ParkingLocationsOnTheMap.API\ParkingLocationsOnTheMap.API.csproj", "{86ED6923-A87D-46B6-B7A1-58955675DB9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

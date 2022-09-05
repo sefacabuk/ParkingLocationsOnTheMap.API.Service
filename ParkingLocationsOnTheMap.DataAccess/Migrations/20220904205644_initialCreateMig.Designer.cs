@@ -10,7 +10,7 @@ using ParkingLocationsOnTheMap.DataAccess;
 namespace ParkingLocationsOnTheMap.DataAccess.Migrations
 {
     [DbContext(typeof(ParkingLocationsOnTheMapDbContext))]
-    [Migration("20220904200435_initialCreateMig")]
+    [Migration("20220904205644_initialCreateMig")]
     partial class initialCreateMig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,9 +69,6 @@ namespace ParkingLocationsOnTheMap.DataAccess.Migrations
 
                     b.Property<string>("COUNTY_NAME")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ISPARK_DATA_ID")
-                        .HasColumnType("int");
 
                     b.Property<string>("LATITUDE")
                         .HasColumnType("nvarchar(max)");
